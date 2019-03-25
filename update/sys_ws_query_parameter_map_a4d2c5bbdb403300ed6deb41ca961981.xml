@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_query_parameter_map">
+    <sys_ws_query_parameter_map action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ws_query_parameter_map</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-14 11:16:42</sys_created_on>
+        <sys_id>a4d2c5bbdb403300ed6deb41ca961981</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>74911f5bdb403300ed6deb41ca961984</sys_name>
+        <sys_package display_value="TestScriptedAPI" source="x_302060_testscrip">b6407293db003300ed6deb41ca9619bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TestScriptedAPI">b6407293db003300ed6deb41ca9619bb</sys_scope>
+        <sys_update_name>sys_ws_query_parameter_map_a4d2c5bbdb403300ed6deb41ca961981</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-14 11:16:42</sys_updated_on>
+        <web_service_operation display_value="getEmployee">f9b15f9bdb403300ed6deb41ca961916</web_service_operation>
+        <web_service_query_parameter display_value="name">74911f5bdb403300ed6deb41ca961984</web_service_query_parameter>
+    </sys_ws_query_parameter_map>
+</record_update>

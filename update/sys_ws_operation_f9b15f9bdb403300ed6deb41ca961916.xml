@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>getEmployee</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var studentName = request.queryParams.name;
+	
+	var queryString = "name=" + studentName;
+    var requestStudentName = new GlideRecord('x_302060_testscrip_student');
+	requestStudentName.addEncodedQuery(queryString);
+	requestStudentName.query();
+	
+	if (requestStudentName.getRowCount() == 0) {
+		return "Student name does not exist";
+	}
+	
+	var count = 0;
+	while (requestStudentName.next()) {
+	  count += 1;
+	  name = requestStudentName.name;
+	  department = requestStudentName.u_reference_1.getDisplayValue();
+	}
+	
+	
+	var body = {};
+	body = {"employee_name": name,
+		"department": department
+	};
+	
+	response.setBody(body);
+	response.setStatus(200);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_302060_testscrip/employeesapi</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-13 08:26:58</sys_created_on>
+        <sys_id>f9b15f9bdb403300ed6deb41ca961916</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>getEmployee</sys_name>
+        <sys_package display_value="TestScriptedAPI" source="x_302060_testscrip">b6407293db003300ed6deb41ca9619bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TestScriptedAPI">b6407293db003300ed6deb41ca9619bb</sys_scope>
+        <sys_update_name>sys_ws_operation_f9b15f9bdb403300ed6deb41ca961916</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-22 14:43:16</sys_updated_on>
+        <web_service_definition display_value="EmployeeAPI">e0e0d39bdb403300ed6deb41ca961999</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
